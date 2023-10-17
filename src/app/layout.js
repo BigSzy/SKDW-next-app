@@ -1,6 +1,7 @@
 import { Overpass } from 'next/font/google'
 import './styles/global.scss'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 const overpass = Overpass({ subsets: ['latin'] })
 
@@ -14,7 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={overpass.className}>
         <Header/>
-        <main>{children}</main>
+        {children}
+        <Footer/>
       </body>
     </html>
   )

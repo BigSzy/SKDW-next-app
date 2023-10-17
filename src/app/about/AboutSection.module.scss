@@ -1,0 +1,84 @@
+.card{
+    display: flex;
+    padding: 90px 0px; 
+
+    .imageWrapper{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        img{
+            width: 100%;
+        }
+        
+    }
+
+    
+
+    .textWrapper{
+        color: #fff;
+        padding: 0px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+
+        .titleWrapper{
+            display: flex;
+            align-items: center;
+
+            h3{
+                margin-right: 20px;
+            }
+
+            p{
+                color: rgb(199, 29, 29);
+            }
+        }
+
+        h3{
+            font-size: 3rem;
+            margin-bottom: 40px;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        span{
+            color: rgb(199, 29, 29) ;
+        }
+    }
+}
+@media only screen and (min-width:0px) and (max-width:650px){
+    .card{
+        flex-direction: column;
+
+        .imageWrapper{
+            width: 100%;
+        }
+
+        .textWrapper{
+            width: 100%;
+            padding: 0 30px;
+
+            .titleWrapper{
+                display: flex;
+                align-items: center;
+            }
+
+            h3{
+                font-size: 1.75rem;
+                margin-top: 20px;
+            }
+
+            p{
+                font-size: 0.85rem;
+                margin-bottom: 20px;
+            }
+        }
+
+
+    }
+
+    .reverseCard{
+        flex-direction: column-reverse;
+    }
+}
