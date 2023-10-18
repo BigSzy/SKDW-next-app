@@ -72,11 +72,15 @@ export async function POST(request) {
     const recaptchaPayload = await racaptchaResponse.json();
 
     if (recaptchaPayload.success) {
-      console.log("Recaptcha successful")
+      console.log("Recaptcha successful");
       const response = await sesClient.send(sendEmailCommand);
+      const data = { message: "Message Sent" };
+      return NextResponse.json(data);
+    } else {
+      console.log(recaptchaPayload);
+      const data = { message: "Recaptcha failed" };
+      return NextResponse.json(data);
     }
-    const data = { message: "Hello world" };
-    return NextResponse.json(data);
   } catch (e) {
     console.error("Failed to send email.");
     console.log(e);

@@ -28,6 +28,7 @@ export default function ContactSection() {
 
   async function submit(event) {
     console.log("Submitting...");
+    event.preventDefault()
 
     const token = await reRef.current.getValue();
 
