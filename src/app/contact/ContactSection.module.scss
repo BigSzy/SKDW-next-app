@@ -55,6 +55,12 @@
     flex-direction: column;
     width: 50%;
 
+    .recaptcha{
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
     h3 {
       font-size: 3rem;
       border-left: solid 4px rgb(199, 29, 29);

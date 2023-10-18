@@ -23,12 +23,13 @@ export default function ContactSection() {
   const mobile = useRef();
   const subject = useRef();
   const message = useRef();
+  const reRef = useRef();
+  const SITE_KEY = "6Lflda4oAAAAAMpkogNzUa_vgDmdGggT6pC81Pxe";
 
   async function submit(event) {
+    console.log("Submitting...");
 
-    console.log("Submitting...")
-
-    const token  = await reRef.current.getValue()
+    const token = await reRef.current.getValue();
 
     const body = {
       firstName: firstName.current.value,
@@ -40,7 +41,7 @@ export default function ContactSection() {
       token,
     };
 
-    console.log(body)
+    console.log(body);
 
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -55,7 +56,6 @@ export default function ContactSection() {
     console.log(data);
   }
 
-
   return (
     <section>
       <div className="container">
@@ -64,7 +64,7 @@ export default function ContactSection() {
             <h2 className={playfairDisplay.className}>My Contact Details.</h2>
             <h3>Szymon Kaluza</h3>
             <p>info@skwd.com</p>
-            <p>07495067985</p>
+            <p>07495067765</p>
             <div className={styles.social}>
               <div className={styles.icon}>
                 <Link href={"/"}>
@@ -84,7 +84,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className={styles.contactForm}>
+          <form className={styles.contactForm} onSubmit={submit}>
             <h3 className={playfairDisplay.className}>Your Contact Details.</h3>
             <p>
               Full Name <span>(required)</span>
@@ -122,7 +122,7 @@ export default function ContactSection() {
               <p>
                 Subject <span>(required)</span>
               </p>
-              <input type="text"  ref={subject}/>
+              <input type="text" ref={subject} />
             </div>
 
             <div className={styles.message}>
@@ -136,10 +136,14 @@ export default function ContactSection() {
               ></textarea>
             </div>
 
-            <div className={styles.button}>
-              <input type="submit"  className={overpass.className}/>
+            <div className={styles.recaptcha}>
+              <ReCAPTCHA sitekey={SITE_KEY} ref={reRef} />
             </div>
-          </div>
+
+            <div className={styles.button}>
+              <input type="submit" className={overpass.className} />
+            </div>
+          </form>
         </div>
       </div>
     </section>
