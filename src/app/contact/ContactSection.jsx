@@ -12,35 +12,27 @@ import { Playfair_Display } from "next/font/google";
 import { Overpass } from "next/font/google";
 import { useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useForm, SubmitHandler } from "react-hook-form";
 const overpass = Overpass({ subsets: ["latin"] });
 
 const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
 export default function ContactSection() {
-  const firstName = useRef();
-  const lastName = useRef();
-  const email = useRef();
-  const mobile = useRef();
-  const subject = useRef();
-  const message = useRef();
   const reRef = useRef();
   const SITE_KEY = "6Lflda4oAAAAAMpkogNzUa_vgDmdGggT6pC81Pxe";
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  async function submit(event) {
+  async function submit(data) {
     console.log("Submitting...");
-    event.preventDefault()
+    console.log(data);
 
     const token = await reRef.current.getValue();
 
-    const body = {
-      firstName: firstName.current.value,
-      lastName: lastName.current.value,
-      email: email.current.value,
-      mobile: mobile.current.value,
-      message: message.current.value,
-      subject: subject.current.value,
-      token,
-    };
+    const body = { ...data, token };
 
     console.log(body);
 
@@ -52,99 +44,116 @@ export default function ContactSection() {
       body: JSON.stringify(body),
     });
 
-    const data = await response.json();
+    const ret = await response.json();
 
-    console.log(data);
+    console.log(ret);
   }
 
   return (
     <section>
       <div className="container">
         <div className={styles.card}>
-          <div className={styles.contactInfo}>
-            <h2 className={playfairDisplay.className}>My Contact Details.</h2>
-            <h3>Szymon Kaluza</h3>
-            <p>info@skwd.com</p>
-            <p>07495067765</p>
-            <div className={styles.social}>
-              <div className={styles.icon}>
-                <Link href={"/"}>
-                  <FontAwesomeIcon icon={faInstagram} />
-                </Link>
-              </div>
-              <div className={styles.icon}>
-                <Link href={"/"}>
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </Link>
-              </div>
-              <div className={styles.icon}>
-                <Link href={"/"}>
-                  <FontAwesomeIcon icon={faGithub} />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <form className={styles.contactForm} onSubmit={submit}>
+          <form className={styles.contactForm} onSubmit={handleSubmit(submit)}>
             <h3 className={playfairDisplay.className}>Your Contact Details.</h3>
-            <p>
-              Full Name <span>(required)</span>
-            </p>
+            <p>Full Name</p>
             <div className={styles.name}>
               <div className={styles.firstName}>
                 <span>First Name</span>
-                <input type="text" ref={firstName} />
+                <input
+                  {...register("firstName", { required: true })}
+                  type="text"
+                />
+                {errors.firstName?.type === "required" && (
+                  <p className={styles.required} role="alert">
+                    First name is required
+                  </p>
+                )}
               </div>
 
               <div className={styles.lastName}>
                 <span>Last Name</span>
-                <input type="text" ref={lastName} />
+                <input
+                  {...register("lastName", { required: true })}
+                  type="text"
+                />
+                {errors.lastName?.type === "required" && (
+                  <p className={styles.required} role="alert">
+                    Last name is required
+                  </p>
+                )}
               </div>
             </div>
 
             <div className={styles.email}>
-              <p>
-                Email Address <span>(required)</span>
-              </p>
-              <input type="text" ref={email} />
+              <p>Email Address</p>
+              <input {...register("email", { required: true })} type="text" />
+              {errors.email?.type === "required" && (
+                <p className={styles.required} role="alert">
+                  Email Address is required
+                </p>
+              )}
             </div>
 
             <div className={styles.phone}>
-              <p>
-                Phone Number{" "}
-                <span>
-                  Not required but makes it easier sometimes if i can call you
-                </span>
-              </p>
-              <input type="text" ref={mobile} />
+              <p>Phone Number </p>
+              <input {...register("phone", { required: true })} type="text" />
+              {errors.phone?.type === "required" && (
+                <p className={styles.required} role="alert">
+                  Phone number is required
+                </p>
+              )}
             </div>
 
             <div className={styles.email}>
-              <p>
-                Subject <span>(required)</span>
-              </p>
-              <input type="text" ref={subject} />
+              <p>Subject</p>
+              <input {...register("subject", { required: true })} type="text" />
+              {errors.subject?.type === "required" && (
+                <p className={styles.required} role="alert">
+                  Subject is required
+                </p>
+              )}
             </div>
 
             <div className={styles.message}>
-              <p>
-                Message Details <span>(required)</span>
-              </p>
+              <p>Message Details</p>
               <textarea
+                {...register("message", { required: true })}
                 placeholder="Send me all your questions "
                 className={overpass.className}
-                ref={message}
               ></textarea>
-            </div>
-
-            <div className={styles.recaptcha}>
-              <ReCAPTCHA sitekey={SITE_KEY} ref={reRef} />
+              {errors.message?.type === "required" && (
+                <p className={styles.required} role="alert">
+                  Message is required
+                </p>
+              )}
             </div>
 
             <div className={styles.button}>
               <input type="submit" className={overpass.className} />
             </div>
+
+            <div className={styles.recaptcha}>
+              <ReCAPTCHA sitekey={SITE_KEY} ref={reRef} />
+            </div>
           </form>
+
+          <div className={styles.social}>
+            <div className={styles.icon}>
+              <Link href={"/"}>
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </Link>
+            </div>
+            <div className={styles.icon}>
+              <Link href={"/"}>
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </Link>
+            </div>
+            <div className={styles.icon}>
+              <Link href={"/"}>
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

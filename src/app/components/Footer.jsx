@@ -30,17 +30,17 @@ export default function Footer() {
             <div className={`${styles.footerCol} ${styles.footerSocial}`}>
                 <div className={styles.icon}>
                     <Link href={"/"}>
-                            <FontAwesomeIcon icon={faInstagram}/> 
+                            <FontAwesomeIcon icon={faInstagram} size="2x"/> 
                     </Link>
                 </div>
                 <div className={styles.icon}>
                     <Link href={"/"}>
-                            <FontAwesomeIcon icon={faLinkedin}/> 
+                            <FontAwesomeIcon icon={faLinkedin} size="2x"/> 
                     </Link>
                 </div>
                 <div className={styles.icon}>
                     <Link href={"/"}>
-                            <FontAwesomeIcon icon={faGithub}/> 
+                            <FontAwesomeIcon icon={faGithub} size="2x" /> 
                     </Link>
                 </div>
             

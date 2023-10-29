@@ -12,8 +12,8 @@ export default function Hero() {
         <div className={styles.hero}>
             <div className='container'>
                 <div className={styles.heroInfo}>
-                    <p>Here to make your dreams a reality</p>
-                    <h1 className={playfairDisplay.className}>Let's build something brilliant together.</h1>
+                    <p>Here to make your dreams a reality.</p>
+                    <h1 className={playfairDisplay.className}>Let's build something great together.</h1>
 
                     <div className={styles.heroLinks}>
                         <Link href="/about">About Me</Link>
