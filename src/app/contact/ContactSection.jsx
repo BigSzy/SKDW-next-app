@@ -137,23 +137,7 @@ export default function ContactSection() {
             </div>
           </form>
 
-          <div className={styles.social}>
-            <div className={styles.icon}>
-              <Link href={"/"}>
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
-              </Link>
-            </div>
-            <div className={styles.icon}>
-              <Link href={"/"}>
-                <FontAwesomeIcon icon={faLinkedin} size="2x" />
-              </Link>
-            </div>
-            <div className={styles.icon}>
-              <Link href={"/"}>
-                <FontAwesomeIcon icon={faGithub} size="2x" />
-              </Link>
-            </div>
-          </div>
+      
         </div>
       </div>
     </section>

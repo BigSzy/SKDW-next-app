@@ -1,9 +1,12 @@
 import React from 'react'
+import ProjectsHero from './ProjectsHero'
 
-function projects() {
+function Projects() {
   return (
-    <div>projects</div>
+    <main>
+      <ProjectsHero/>
+    </main>
   )
 }
 
-export default projects
+export default Projects
