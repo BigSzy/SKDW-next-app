@@ -2,7 +2,7 @@ import React from 'react'
 import ContactHero from './ContactHero'
 import ContactSection from './ContactSection'
 
-function contact() {
+function Contact() {
   return (
     <main>
       <ContactHero/>
@@ -11,4 +11,4 @@ function contact() {
   )
 }
 
-export default contact
+export default Contact

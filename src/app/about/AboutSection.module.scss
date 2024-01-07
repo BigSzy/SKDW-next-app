@@ -47,7 +47,7 @@
         }
     }
 }
-@media only screen and (min-width:0px) and (max-width:650px){
+@media only screen and (min-width:0px) and (max-width:750px){
     .card{
         flex-direction: column;
 
@@ -80,5 +80,19 @@
 
     .reverseCard{
         flex-direction: column-reverse;
+    }
+}
+
+@media only screen and (min-width:751px) and (max-width:1200px) {
+    .reverseCard{
+        flex-direction: column;
+        .imageWrapper{
+            width: 100%;
+
+        }
+
+        .textWrapper{
+            width: 100%;
+        }
     }
 }

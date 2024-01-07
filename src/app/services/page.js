@@ -4,7 +4,7 @@ import ServiceSection from './ServiceSection'
 import ServiceGrid from './ServiceGrid'
 import ServiceSection2 from './ServiceSection2'
 
-function services() {
+function Services() {
   return (
     <main>
       <ServicesHero/>
@@ -15,4 +15,4 @@ function services() {
   )
 }
 
-export default services
+export default Services

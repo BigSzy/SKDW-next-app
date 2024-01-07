@@ -2,7 +2,7 @@ import React from 'react'
 import AboutHero from './AboutHero'
 import AboutSection from './AboutSection'
 
-function about() {
+function About() {
   return (
     <main>
       <AboutHero/>
@@ -11,4 +11,4 @@ function about() {
   )
 }
 
-export default about
+export default About

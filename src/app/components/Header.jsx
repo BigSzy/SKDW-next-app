@@ -37,11 +37,11 @@ export default function Header() {
         </div>
         <div className={styles.rightSide}>
           <div className={styles.navLinks}>
-            <Link href="/" className={currentRoute === "/" ? "active" : ""}>Home</Link>
-            <Link href="/services" className={currentRoute === "/services" ? "active" : ""}>Services</Link>
-            <Link href="/projects" className={currentRoute === "/projects" ? "active" : ""}>Projects</Link>
-            <Link href="/about" className={currentRoute === "/about" ? "active" : ""}>About</Link>
-            <Link href="/contact" className={currentRoute === "/contact" ? "active" : ""}>Contact</Link>
+            <Link href="/">Home</Link>
+            <Link href="/services">Services</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/about">About</Link>
+            <Link href="/contact">Contact</Link>
           </div>
 
           <button onClick={() => setToggle((toggle) => !toggle)}>

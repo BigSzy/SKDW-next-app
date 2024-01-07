@@ -1,0 +1,46 @@
+.projectGrid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    color: #fff;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+
+
+    .projectCard{
+        display: flex;
+        flex-direction: column;
+
+
+        .img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 550px;
+            img{
+                height: 100%;
+            }
+        }
+        .info{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            width: 100%;
+            padding: 1rem 0 ;
+            text-align: center;
+
+            p{
+                color: rgb(199, 29, 29);
+            }
+        }
+        
+    }
+}
+
+@media only screen and (min-width:0px) and (max-width:900px) {
+    .projectGrid{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}
