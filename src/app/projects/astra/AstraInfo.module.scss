@@ -1,0 +1,25 @@
+.overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  gap: 20px;
+  color: #fff;
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(199, 29, 29);
+  }
+
+  p{
+    font-size: 1.25rem;
+  }
+
+  .subtitle {
+    color: rgb(199, 29, 29);
+  }
+}

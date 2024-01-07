@@ -9,3 +9,10 @@
     color: #fff;
     
 }
+@media only screen and (min-width:0px) and (max-width:750px){
+    .projectLead{
+        padding: 2.5rem 1.5rem;
+        margin: 1.5rem 0;
+        font-size: 1rem;
+    }
+}

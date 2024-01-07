@@ -1,8 +1,15 @@
 import React from 'react'
+import AstraHero from './AstraHero'
+import AstraInfo from './AstraInfo'
+import AstraImg from './AstraImg'
 
 function Astra() {
   return (
-    <div>Astra</div>
+    <main>
+        <AstraHero/>
+        <AstraInfo/>
+        <AstraImg/>
+    </main>
   )
 }
 
