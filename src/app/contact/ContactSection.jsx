@@ -128,16 +128,13 @@ export default function ContactSection() {
               )}
             </div>
 
-            <div className={styles.button}>
-              <input type="submit" className={overpass.className} />
-            </div>
-
             <div className={styles.recaptcha}>
               <ReCAPTCHA sitekey={SITE_KEY} ref={reRef} />
             </div>
+            <div className={styles.button}>
+              <input type="submit" className={overpass.className} />
+            </div>
           </form>
-
-      
         </div>
       </div>
     </section>

@@ -29,6 +29,10 @@ function AstraInfo() {
           Visit his website here. 
           <Link href={"https://www.astrastudios.co.uk/"}> Click Here</Link>
         </p>
+
+        <h2 className={playfairDisplay.className}>Showcase</h2>
+        <p>Here a few of many pages that the website has. I urge you to visit as AJ has created some really good animation that I'm unable to display with just a simple screnshot of his page and you can see the finer details of his work.</p>
+
       </div>
       <div className={styles.links}></div>
     </section>
