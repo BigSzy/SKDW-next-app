@@ -13,8 +13,8 @@ export default function IndexSection() {
             </div>
 
             <div className={styles.infoWrapper}>
-                <h3 className={playfairDisplay.className}>A Passion and Focus for front-end development.</h3>
-                <p>If you want a great looking website thats fully functional, look no further. See for yourself how i work and the processes i take to develop front end applications.</p>
+                <h3 className={playfairDisplay.className}>A Passion and focus for frontend development.</h3>
+                <p>If you want a great looking website thats fully functional, look no further. See for yourself how I work and the processes I take to develop frontend applications.</p>
 
                 <div className={styles.linkWrapper}>
                     <Link href="/services"> Learn More</Link> 

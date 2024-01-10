@@ -21,6 +21,11 @@ export default function Header() {
     }
   });
 
+  function handleClick () {
+    mobileLink.current.style = "display:none;";
+  }
+
+
   return (
     <header>
       <div className="container">
@@ -45,11 +50,11 @@ export default function Header() {
       </div>
 
       <div className={styles.mobileLinks} ref={mobileLink}>
-        <Link href="/">Home</Link>
-        <Link href="/services">Services</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/about">About</Link>
-        <Link href="/contact">Contact Us</Link>
+        <Link onClick={handleClick} href="/">Home</Link>
+        <Link onClick={handleClick} href="/services">Services</Link>
+        <Link onClick={handleClick} href="/projects">Projects</Link>
+        <Link onClick={handleClick} href="/about">About</Link>
+        <Link onClick={handleClick} href="/contact">Contact Me</Link>
       </div>
     </header>
   );

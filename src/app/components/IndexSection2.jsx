@@ -14,7 +14,7 @@ export default function IndexSection2 () {
                 <div className={`${styles.card} ${styles.reverseCard}`}>
                     <div className={styles.infoWrapper}>
                         <h3 className={playfairDisplay.className}>Personalised design for each client.</h3>
-                        <p>When working with me i make sure every website is unique and built to the clients needs, there are no templates that i supply. Take a look at projects ive completed.</p>
+                        <p>When working with me I make sure every website is unique and built to the clients needs, there are no templates that I supply. Take a look at projects I've completed.</p>
 
                         <div className={styles.linkWrapper}>
                              <Link href="/projects"> Learn More</Link> 

@@ -98,6 +98,7 @@
   .button {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
     input {
       display: flex;
@@ -133,6 +134,21 @@
 
       h3 {
         font-size: 2rem;
+      }
+
+      .name{
+        flex-direction: column;
+        gap: 10px;
+        
+        .firstName{
+          width: 100%;
+        }
+
+        .lastName{
+          width: 100%;
+        }
+
+        
       }
     }
   }
