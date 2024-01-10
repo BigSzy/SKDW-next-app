@@ -21,9 +21,7 @@ export default function Header() {
     }
   });
 
-  function handleClick () {
-    mobileLink.current.style = "display:none;";
-  }
+ 
 
 
   return (
@@ -50,11 +48,11 @@ export default function Header() {
       </div>
 
       <div className={styles.mobileLinks} ref={mobileLink}>
-        <Link onClick={handleClick} href="/">Home</Link>
-        <Link onClick={handleClick} href="/services">Services</Link>
-        <Link onClick={handleClick} href="/projects">Projects</Link>
-        <Link onClick={handleClick} href="/about">About</Link>
-        <Link onClick={handleClick} href="/contact">Contact Me</Link>
+        <Link onClick={() => setToggle((toggle) => !toggle)}href="/">Home</Link>
+        <Link onClick={() => setToggle((toggle) => !toggle)}href="/services">Services</Link>
+        <Link onClick={() => setToggle((toggle) => !toggle)}href="/projects">Projects</Link>
+        <Link onClick={() => setToggle((toggle) => !toggle)}href="/about">About</Link>
+        <Link onClick={() => setToggle((toggle) => !toggle)}href="/contact">Contact Me</Link>
       </div>
     </header>
   );
