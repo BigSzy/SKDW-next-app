@@ -20,7 +20,7 @@ function DaintreeInfo() {
           This project was created using Next.JS and deployed on AWS Amplify.
         </p>
         <p>
-          Visit his website here. 
+          Visit the website here. 
           <Link href={"https://shop.skwd.co.uk"}> Click Here</Link>
         </p>
 

@@ -17,7 +17,7 @@ function AstraInfo() {
           this project to have the design and layout up to the high standards AJ
           works to, so matching it was without question. It was a great learning
           experience working with him as he has a very good eye for design
-          aswell as being a very talented artist. So this is his showcase for
+          as well as being a very talented artist. So this is his showcase for
           all the amazing work he's created over the years.
         </p>
         <p>
