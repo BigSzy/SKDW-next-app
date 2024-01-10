@@ -20,7 +20,7 @@ export default function Footer() {
             <div className={`${styles.footerCol} ${styles.footerInfo}`}>
             <h3 className={playfairDisplay.className}>Szymon Kaluza</h3>
             <p className={styles.title}>Free Lance Front-End Developer</p>
-            <p>info@skwd.co.uk</p>
+            
             </div>
 
             <div className={`${styles.footerCol} ${styles.footerLogo}`}>
@@ -29,17 +29,17 @@ export default function Footer() {
 
             <div className={`${styles.footerCol} ${styles.footerSocial}`}>
                 <div className={styles.icon}>
-                    <Link href={"/"}>
+                    <Link href={"https://www.instagram.com/bigszy/"}>
                             <FontAwesomeIcon icon={faInstagram} size="2x"/> 
                     </Link>
                 </div>
                 <div className={styles.icon}>
-                    <Link href={"/"}>
+                    <Link href={"https://www.linkedin.com/in/szymon-kaluza-452624211/"}>
                             <FontAwesomeIcon icon={faLinkedin} size="2x"/> 
                     </Link>
                 </div>
                 <div className={styles.icon}>
-                    <Link href={"/"}>
+                    <Link href={"https://github.com/BigSzy"}>
                             <FontAwesomeIcon icon={faGithub} size="2x" /> 
                     </Link>
                 </div>

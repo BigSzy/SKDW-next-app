@@ -12,7 +12,7 @@ function AstraInfo() {
         <h2 className={playfairDisplay.className}>Astra Studios</h2>
         <p className={styles.subtitle}>By AJ Smith</p>
         <p>
-          This was my first project for a client so i was extemely excited to
+          This was my first project for a client so I was extemely excited to
           show what I can do when it comes to buidling websites. It was important on
           this project to have the design and layout up to the high standards AJ
           works to, so matching it was without question. It was a great learning
