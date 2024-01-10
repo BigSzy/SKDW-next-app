@@ -19,7 +19,7 @@ export default function Footer() {
         <div className={styles.footerRow}>
             <div className={`${styles.footerCol} ${styles.footerInfo}`}>
             <h3 className={playfairDisplay.className}>Szymon Kaluza</h3>
-            <p className={styles.title}>Free Lance Front-End Developer</p>
+            <p className={styles.title}>Freelance Front-End Developer</p>
             
             </div>
 
