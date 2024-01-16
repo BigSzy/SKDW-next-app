@@ -7,7 +7,7 @@ const overpass = Overpass({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'SKWD',
-  description: 'Szymon Kaluza Web evelopment',
+  description: 'Szymon Kaluza Web Development',
 }
 
 export default function RootLayout({ children }) {
