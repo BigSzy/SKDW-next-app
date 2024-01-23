@@ -1,16 +1,9 @@
 "use client";
 
 import styles from "./ContactSection.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faInstagram,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
 import { Playfair_Display } from "next/font/google";
 import { Overpass } from "next/font/google";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm, SubmitHandler } from "react-hook-form";
 const overpass = Overpass({ subsets: ["latin"] });
@@ -23,18 +16,16 @@ export default function ContactSection() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    reset,
+    formState: { errors, isSubmitSuccessful },
   } = useForm();
 
   async function submit(data) {
-    console.log("Submitting...");
-    console.log(data);
 
     const token = await reRef.current.getValue();
 
     const body = { ...data, token };
 
-    console.log(body);
 
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -46,8 +37,13 @@ export default function ContactSection() {
 
     const ret = await response.json();
 
-    console.log(ret);
   }
+
+  useEffect(() => {
+    if(isSubmitSuccessful){
+      reset()
+    }
+  }),[isSubmitSuccessful, reset]
 
   return (
     <section>
